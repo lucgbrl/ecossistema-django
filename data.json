@@ -1,0 +1,26 @@
+{
+    "people": [
+        {
+            "name": "Lucas",
+            "website": "santos@workers",
+            "from": "Brasil",
+            "degree": [
+                {
+                    "college": "Computer Engineer",
+                    "Year": "2013",
+                    "Area": "Web Optimization"
+                },
+                {
+                    "college": "Software Engineer",
+                    "Year": "2019",
+                    "Area": "WCAG 2.0"
+                }
+            ]
+        },
+        {
+            "name": "Gabriel",
+            "website": "santos@workers",
+            "from": "Ireland"
+        }
+    ]
+}

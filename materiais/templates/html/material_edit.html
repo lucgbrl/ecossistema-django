@@ -1,0 +1,41 @@
+{% extends 'html/base.html' %}
+{% block content %}
+<section class = "container">
+    <div class = "row  mb-5">
+        <div class = "col-md-6">
+            <code>Centro Universitátio INTA - UNINTA</code>
+            <h1>Materiais e Ferramentas Pedagógicas</h1>
+            <p>Página construída empregando Django & MySQL</p>
+
+            <p>Para editar esta página utilize os conteudos do arquivo a seguir:</p>
+            <code>application/views/welcome_message.php</code>
+
+            <p>O Controller correspondente encontra-se no diretório:</p>
+            <code>application/controllers/Welcome.php</code>
+            <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+            
+            <a class = "btn btn-danger text-white" href = "<?php echo site_url('Welcome/index/'); ?>">Buscar termos</a>
+            <a class = "btn btn-danger text-white" href = "<?php echo site_url('Welcome/addBook/');?>">Sugerir adição ao acervo</a>
+        </div>
+        <div class = "col-md-6">
+            <div class = "card">
+                <div class = "card-header">
+                    Cadastrar novo material
+                </div>
+                <div class = "card-body">
+                    <h2>Novo Material Didático</h2>
+                    <p>
+                        Preencha o formulário abaixo para adicionar um novo material ou um novo vídeo tutorial
+                    </p>
+                        <form method = "POST" class = ""> 
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                </div>
+                <div class = "card-footer">
+                        <button type = "submit" class  = "btn-block btn btn-danger">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+</section>
+{% endblock %}

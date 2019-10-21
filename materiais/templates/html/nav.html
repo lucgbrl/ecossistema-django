@@ -1,0 +1,32 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow-lg mb-5 p-3">
+    <div class = "container">
+        <a class="navbar-brand" href="#"><img class="mb-3" src="{% static 'images/logo.png'%}" width="100px" height="auto" alt="Logo da Aiamis"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Página Inicial <span class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'material' %}">Materiais Didáticos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Certificados</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Ecossistema de Aprendizagem</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mais</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="">Editar Materiais</a>
+                    {% if user.is_authenticated %}
+                        <a class="dropdown-item" href="">Cadastrar novo</a>
+                    {% endif %}
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Central de Comunicação Interna</a>
+                </div>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+        </div>
+    </div>
+</nav>

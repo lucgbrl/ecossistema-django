@@ -1,0 +1,30 @@
+{% extends 'html/base.html' %}
+{% load static %}
+{% block content %}
+<section class="container"> 
+    <div class = "row">
+      <div class = "col-md-12 mb-5" align = "center">
+          <h2>Olá, Seja bem vindo!</h2>
+          <h4>Utilize esta central para localizar conteúdos específicos dentro do Catálogo de Materiais Aiamis</h4>
+      </div>
+      {% for post in posts %}
+      <div class = "col-md-4">
+        <div class = "card mb-3 ">
+          <div class = "card-header text-muted">
+            <small>{{ post.created_date }}</small>
+          </div>
+          <div class = "card-body ">
+            <div align = "center"><img class="mb-3" src="{% static 'images/aiamis.svg' %}" width="125px" height="auto" alt="Logo da Aiamis"></div>
+            <h3 align = "center">{{ post.title|linebreaks }}</h3>
+            <small>{{ post.published_date|linebreaks}}</small>
+            {{ post.text}}
+          </div>
+          <div class = "card-footer">
+             <a class = "btn btn-warning btn-block" href = "{{post.url}}" target = "blank">Avançar</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</section>
+{% endblock %}

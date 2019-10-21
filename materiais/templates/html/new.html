@@ -1,0 +1,89 @@
+{% extends 'html/base.html' %}
+{% block content %}
+<section class = "container">
+        <div class="row mb-5">			
+            <div class = "col-md-6">
+                <code>Centro Universitátio INTA - UNINTA</code>
+                <h1>Materiais e Ferramentas Pedagógicas</h1>
+                <p>Página construída empregando Django & MySQL</p>
+    
+                <p>Para editar esta página utilize os conteudos do arquivo a seguir:</p>
+                <code>application/views/welcome_message.php</code>
+    
+                <p>O Controller correspondente encontra-se no diretório:</p>
+                <code>application/controllers/Welcome.php</code>
+                <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+                
+                <a class = "btn btn-danger text-white" href = "<?php echo site_url('Welcome/index/'); ?>">Buscar termos</a>
+                <a class = "btn btn-danger text-white" href = "<?php echo site_url('Welcome/addBook/');?>">Sugerir adição ao acervo</a>
+            </div>
+            <div class = "col-md-6">
+                <div class = "row">
+                    <div class = "col-md-12">
+                        <div class = "card">
+                            <div class = "card-body">
+                                <!--img src = "<?= base_url();?>assets/images/l.png" width = "200"-->
+                                <form class = "mb-3 p-2">
+                                    <h1>Cadastrar</h1>
+                                    <p>Preencha o formulário abaixo para adicionar um novo <code>material</code> ou um novo <span class = "video">vídeo</span></p>
+                                    <div class = "row">
+                                    <div class = "col-md-12">
+                                        <form method="POST">
+                                            {% csrf_token %}
+                                            {{form.as_p }}
+                                        
+                                            <button type = "submit" class = "btn btn-primary btn-block text-white">Cadastrar um novo material</button>
+                                        </form>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock%}
+
+<!-- 
+
+    <div class = "row">
+                                            <div class = "col-md-12 mb-3">
+                                               <form>
+                                                   <label>Nome do Autor</label>
+                                                   <input type = "text" class= "form-control mb-3" placeholder = "e.g. João José" />
+                                                   <label>Título do material</label>
+                                                   <input type = "text" class= "form-control" placeholder = "e.g. João José" />
+                                            </div>
+                                            <div class = "col-md-12">
+                                        <label>Descrição do material</label>
+                                        <p class = "text-muted">Adicionar somente para materiais que necessitem de descritores adicionais</p>
+                                        
+                                        <input class = "form-control mb-3 p-2" type = "text" placeholder = "Subs"/>
+                                        
+                                        <label>Autor</label>									
+                                        <input class = "form-control mb-3 p-2" type = "text" placeholder = "Subs"/>
+                                        
+                                        <div class="form-group">
+                                            <label for="exampleFormControlSelect1">Titulação</label>
+                                            <select class="form-control" id="exampleFormControlSelect1">
+                                            <option>Professor</option>
+                                            <option>Técnico</option>
+                                            <option>Especialista</option>
+                                            <option>Mestre</option>
+                                            <option>Doutor</option>
+                                            <option>Pós-Doutor</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class = "col-md-6">
+                                        <label>ISBN</label>
+                                        <input class = "form-control mb-3 p-2" type = "text" placeholder = "ISBN"/>
+                                    </div>
+                                    <div class = "col-md-6">
+                                        <label>URL</label>
+                                        <input class = "form-control mb-3 p-2" type = "text" placeholder = "URI"/>			
+                                    </div>
+
+
+-->
