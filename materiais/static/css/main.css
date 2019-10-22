@@ -113,7 +113,7 @@ ul li {
 }
 .jumbotron h1 {
     position: relative;
-    margin-top: 225px !important;
+    /*margin-top: 225px !important;*/
     font-size: 5em !important;
     vertical-align: middle !important;
 }
