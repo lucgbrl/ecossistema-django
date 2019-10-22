@@ -10,6 +10,9 @@ def index(request):
     posts = Post.objects.filter(published_date__lte = timezone.now()).order_by('published_date')
     return render(request, 'html/index.html', {'posts' : posts})
 
+def usuarios(request):
+    return render(request, 'html/usuarios.html', {})
+    
 def lista(request):
     materiais_count = Material.objects.count()
     materiais = Material.objects.filter(published_date__lte = timezone.now()).order_by('published_date')

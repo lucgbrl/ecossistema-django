@@ -1,0 +1,22 @@
+{% extends 'html/base.html' %}
+{% load static %}
+{% block content %}
+    <section class = "jumbotron bg-danger text-white">
+        <div class = "container">
+            <div class = "row">
+                <div class = "col-md-6">
+                    <small class = "text-white">Centro Universitário UNINTA</small>
+                    <h1 display = "heading-1">Usuários</h1>
+                    <h2 class = "heading-1">Ecossistema de Aprendizagem Aiamis</h2>
+                    <p class = "text-white">Texto descritivo acerca do ecossistema de Aprendizagem
+                        Aiamis. Neste banner irão aparecer noticias relevantes recentes.
+                    </p>
+                    <a class = "btn btn-warning btn-lg text-dark" href = "{% url 'new' %}">Cadatrar novo usuário</a>
+                </div>
+                <div class = "col-md-6 d-flex justify-content-center mb-5">
+                    <img class="mb-3" src="{% static 'images/logo.png'%}" width="" height="300" alt="Logo da Aiamis">
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
