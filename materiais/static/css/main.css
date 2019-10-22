@@ -13,7 +13,7 @@
 code{padding: 5px; background-color: rgba(247, 206, 206, 0.571); border-radius: 3px; padding-left: 10px; padding-right: 10px;}
 * { font-family: 'Lato', sans-serif;}
 
-.jumbotron, footer { background-image: url('{% static "/images/19691.jpg" %}') !important;background-size: 50% 50%;}
+.jumbotron, footer { background-image: url('{% static "/images/hh.jpg" %}') !important;background-size: 50% 50%;}
 
 #headline {
     background-image: url("../img/intro-bg.png") !important;

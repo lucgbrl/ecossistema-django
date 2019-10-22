@@ -1,55 +1,51 @@
 {% load static %}
 <style>
-      .jumbotron {
-          background-image: url('{% static "/images/19691.jpg" %}') !important;
-          background-size: 100% 100%;
-        }
-      .jumbotron .col-md-3 {
-        border-radius: 10px !important;
-        
-      }
+/*.jumbotron { background-image: url('{% static "/images/19691.jpg" %}') !important;background-size: 100% 100%;}*/
+.jumbotron .col-md-3 { border-radius: 10px !important;}
 </style>
 <script src="https://kit.fontawesome.com/fb0bd80f2e.js" crossorigin="anonymous"></script>
-<section class = "jumbotron text-white">
+<section class = "jumbotron bg-danger text-white">
   <div class = "container">
     <div class = "row">
       <div class = "col-md-6" style = "margin-bottom: 150px !important;">
-          <small class = "text-white">Centro Universitário UNINTA</small>
-          <h1 display = "heading-1">Evoluindo</h1>
-          <h2 class = "heading-1">Ecossistema de Aprendizagem Aiamis</h2>
-          <p class = "text-white">Texto descritivo acerca do ecossistema de Aprendizagem
-            Aiamis. Neste banner irão aparecer noticias relevantes recentes.
-          </p>
-          <a class = "btn btn-warning btn-lg text-dark mb-3" href = "{% url 'new' %}">Acessar catálogo de Materiais</a>
-          <a class = "btn btn-warning btn-lg text-dark mb-3" href = "{% url 'new' %}"><i class = "fab fa-twitter"></i></a>
-          <a class = "btn btn-warning btn-lg text-dark mb-3" href = "{% url 'new' %}"><i class = "fab fa-facebook"></i></a>
-          <a class = "btn btn-warning btn-lg text-dark mb-3" href = "{% url 'new' %}"><i class = "fab fa-google"></i></a>
-      </div>
+        <small class = "text-white">Centro Universitário UNINTA</small>
+        <h1 display = "heading-1">Evoluindo</h1>
+        <h2 class = "heading-1">Ecossistema de Aprendizagem Aiamis</h2>
+        <p class = "text-white">Texto descritivo acerca do ecossistema de Aprendizagem
+          Aiamis. Neste banner irão aparecer noticias relevantes recentes.
+        </p>
+        <a class = "btn btn-warning btn-lg text-dark mb-3" href = "{% url 'new' %}">Acessar catálogo de Materiais</a>
+        <a class = "btn btn-warning btn-lg text-dark mb-3" href = "{% url 'new' %}"><i class = "fab fa-twitter"></i></a>
+        <a class = "btn btn-warning btn-lg text-dark mb-3" href = "{% url 'new' %}"><i class = "fab fa-facebook"></i></a>
+        <a class = "btn btn-warning btn-lg text-dark mb-3" href = "{% url 'new' %}"><i class = "fab fa-google"></i></a>
+    </div>
     <div class = "col-md-6 d-flex justify-content-center mb-5">
         <img class="mb-3" src="{% static 'images/logo.png'%}" width="" height="400" alt="Logo da Aiamis">
     </div>
    
-    <div class = "col-md-3 p-5">
+    <div class = "col-md-3 shadow-lg p-5">
       <i class = "fa fa-2x fa-chalkboard-teacher text-white"></i>
       <h3>Ecossistema</h3>
       <p class = "text-white">Um conjunto avançado de ferramentas</p>
     </div>
   
-    <div class = "col-md-3 bg-warning p-5 shadow-lg">
+    <div class = "col-md-3  p-5 shadow-sm">
         <i class = "fa fa-2x fa-bookmark text-white"></i>
       <h3>Catálogos</h3>
       <p class = "text-white">Um vasto repositório a dispor da comunidade acadêmica</p>
       <a class = "btn btn-danger btn-block">Leia mais sobre <i class = " fa fa-arrow-right text-white"></i></a>
     </div>
   
-    <div class = "col-md-3 p-5">
+    <div class = "col-md-3 shadow-lg p-5">
       <i class = "fa fa-3x fa-gamepad text-white"></i>
       <h3>Gamificação</h3>
       <p class = "text-white">A partir das interações com o AVA</p>
     </div>
     
-    <div class = "col-md-3 p-5">
+    <div class = "col-md-3 shadow-sm p-5">
+      <i class = "fa fa-3x fa-graduation-cap text-white"></i>
       <h3>(UNINTA)</h3>
+      <p class = "text-white">Centro universitário UNINTA</p>
     </div>
   </div>
 </section>
