@@ -1,59 +1,51 @@
 {% extends 'html/base.html' %}
 {% load static %}
 {% block content %}
-<style>
-      .jumbotron .col-md-3 {
-        border-radius: 10px !important;
-        
-      }
-</style>
- <script src="https://kit.fontawesome.com/fb0bd80f2e.js" crossorigin="anonymous"></script>
-<section class = "jumbotron bg-danger text-white" style = "background-color: #000">
-  <div class = "container">
-    <div class = "row">
-      <div class = "col-md-6 mb-5">
-          <small class = "text-white">Centro Universitário UNINTA</small>
-          <h1 display = "heading-1">Evoluindo</h1>
-          <h2 class = "heading-1">Ecossistema de Aprendizagem Aiamis</h2>
-          <p class = "text-white">Texto descritivo acerca do ecossistema de Aprendizagem
-            Aiamis. Neste banner irão aparecer noticias relevantes recentes.
-          </p>
-          <a class = "btn btn-warning btn-lg text-dark" href = "{% url 'new' %}">Acessar catálogo de Materiais</a>
+
+<!--div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          {% include 'html/banner.html' %}
       </div>
-    <div class = "col-md-6 d-flex justify-content-center mb-5">
-        <img class="mb-3" src="{% static 'images/logo.png'%}" width="" height="300" alt="Logo da Aiamis">
-    </div>
-   
-    <div class = "col-md-3 p-5">
-      <i class = "fa fa-2x fa-chalkboard-teacher text-white"></i>
-      <h3>Ecossistema</h3>
-      <p class = "text-white">Um conjunto avançado de ferramentas</p>
-    </div>
-  
-    <div class = "col-md-3 bg-warning p-5 shadow-lg">
-        <i class = "fa fa-2x fa-bookmark text-white"></i>
-      <h3>Catálogos</h3>
-      <p class = "text-white">Um vasto repositório a dispor da comunidade acadêmica</p>
-      <a class = "btn btn-danger btn-block">Leia mais sobre <i class = " fa fa-arrow-right text-white"></i></a>
-    </div>
-  
-    <div class = "col-md-3 p-5">
-      <i class = "fa fa-3x fa-gamepad text-white"></i>
-      <h3>Gamificação</h3>
-      <p class = "text-white">A partir das interações com o AVA</p>
-    </div>
-    
-    <div class = "col-md-3 p-5">
-        <i class = "fa fa-3x fa-layer-group text-white"></i>
-      <h3>(UNINTA)</h3>
+      <div class="carousel-item">
+          {% include 'html/tools.html' %}
+      </div>     
     </div>
   </div>
-</section>
+
+  <!--{% include 'html/banner.html' %}
+  {% include 'html/tools.html' %}-->
+  {% include 'html/banner.html' %}
+
+  <section class = "container mb-5 p-5" align = "center">
+    <div class = "row">
+      <div class = "col-md-4">
+        <h3>Ecossistema de Nível 1</h3>
+        <p>
+          Ecossistema Aberto para a Comunidade acadêmica em geral
+        </p>
+      </div>
+
+      <div class = "col-md-4">
+          <h3>Ecossitema de Nível 2</h3>
+          <p>
+            Acesso com autenticação para alunos UNINTA e comunidade de parceiros
+          </p>
+        </div>
+
+        <div class = "col-md-4">
+            <h3>Ecossistema de Nível 3</h3>
+            <p>
+              Nível de acesso e ferramentas exclusivas dos Alunos UNINTA e colaboradores
+            </p>
+          </div>
+    </div>
+  </section>
 <section class="container"> 
     <div class = "row">
       <div class = "col-md-12 mb-5" align = "center">
-          <h2>Olá, Seja bem vindo!</h2>
-          <h4>Utilize esta central para localizar conteúdos específicos dentro do Catálogo de Materiais Aiamis</h4>
+          <h2>Explore o Ecossistema Aiamis</h2>
+          <p>Utilize esta central para localizar conteúdos específicos dentro do Catálogo de Materiais Aiamis</p>
       </div>
       {% for post in posts %}
       <div class = "col-md-4">
