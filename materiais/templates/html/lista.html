@@ -1,53 +1,54 @@
 {% extends 'html/base.html' %}
 {% block content %}
-  <section class = "container">
+  <section class = "container-fluid">
       <div class = "row">
-            <div class = "col-md-12 mb-3">
-                <h1 class = "">Materiais e Ferramentas Pedagógicas Uninta</h1>
+            <div class = "col-md-3 p-3">
+                <h2 class = "">Materiais</h2>
+                <p class = "">Adicionar um novo material</p> 
+                <a class = "btn btn-danger btn-block text-white">Buscar termos</a>
+            </div>
+            <div class = "col-md-8 p-5">
+                <!--h1 class = "">Materiais e Ferramentas Pedagógicas Uninta</h1>
                 <code>Ecossistema de Aprendizagem → Apoio ao Estudante → Materiais Padagógicos</code>
                 <p>Utilize a tabela a seguir para verificar a lista de materiais disponíbilizados pela Instituição</p>
                 <a class = "btn btn-danger text-white">Buscar termos</a>
-                <a class = "btn btn-danger text-white">Sugerir adição ao acervo</a>
-            </div>
-          <div class = "col-md-12">
+                <a class = "btn btn-danger text-white">Sugerir adição ao acervo</a-->
+         
             <h1 class = "">Materiais disponíveis Online</h1>
             <p>Listando todos os <code> {{ materiais_count }} materiais</code> disponíveis abaixo</p>
-          </div>
-      </div>
-  </section> 
-  <section class = "container">
-          <table class="content-table shadow-sm">                
-              <caption>Materiais Didáticos disponíveis</caption>
-              <form>
-                  <input class = "form-control" placeholder = "e.g. Biofísica"/>
-              </form>
-              <thead class = "bg-danger">
-                  <tr>
-                      <th scope="col">ID</th>
-                      <th scope="col">Titulo</th>
-                      <th scope="col">Páginas</th>
-                      <th scope="col">Videos</th>
-                      <th scope="col">Autoria</th>
-                      
-                      <th scope="col">Referência</th>
-                      <th scope = "col">Publicação</th>
-                  </tr>
-              </thead>
-                  <tbody>
-                      {% for material in materiais %}
-                      <tr class = "active-row">
-                          <th scope="row">{{ material.id }}</th>
-                          <td><a href = "{% url 'detalhes' pk=material.pk %}">{{ material.titulo}}</a></td>
-                          <td>{{ material.paginas}}</td>
-                          <td>{{ material.videos}}</td>
-                          <td>{{ material.autor }}</td>
-                          <td>{{ material.desc }}</td>
-                          <td>{{ material.published_date }}</td>
-                      </tr>
-                  {% endfor %}
-                  </tbody>
-              </table>
-          </div>
+            <table class="content-table shadow-sm">                
+                <caption>Materiais Didáticos disponíveis</caption>
+                <form>
+                    <input class = "form-control" placeholder = "e.g. Biofísica"/>
+                </form>
+                <thead class = "bg-danger">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Páginas</th>
+                        <th scope="col">Videos</th>
+                        <th scope="col">Autoria</th>
+                        
+                        <th scope="col">Referência</th>
+                        <th scope = "col">Publicação</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        {% for material in materiais %}
+                        <tr class = "active-row">
+                            <th scope="row">{{ material.id }}</th>
+                            <td><a href = "{% url 'detalhes' pk=material.pk %}">{{ material.titulo}}</a></td>
+                            <td>{{ material.paginas}}</td>
+                            <td>{{ material.videos}}</td>
+                            <td>{{ material.autor }}</td>
+                            <td>{{ material.desc }}</td>
+                            <td>{{ material.published_date }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
       </div>
   </section>
 {% endblock %}

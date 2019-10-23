@@ -17,17 +17,18 @@
   {% include 'html/tools.html' %}-->
 
   <style>
-  .float { position: fixed; bottom: 56px; right: 32px;}
+  .float { position: fixed; bottom: 56px; right: 16px; z-index: 999;}
   </style>
   {% include 'html/banner.html' %}
 
 <div class = "float">
-    <a class = "btn btn-warning btn-lg text-dark mb-3" href = "{% url 'new' %}">Ferramentas de Acessibilidade</a>
+    <a class = "btn btn-warning btn-lg text-dark mb-3" href = "{% url 'new' %}">Acessibilidade</a>
     <a class = "btn btn-warning btn-lg text-dark mb-3" href = "{% url 'new' %}"><i class = "fab fa-twitter"></i></a>
 </div>
 <section class = "container mb-5 p-5" align = "center">
   <div class = "row">
     <div class = "col-md-4">
+      <div align = "center"><img class="mb-3" src="{% static 'images/aiamis.svg' %}" width="125px" height="auto" alt="Logo da Aiamis"></div>
       <h3>Ecossistema de Nível 1</h3>
       <p>
         Ecossistema Aberto para a Comunidade acadêmica em geral
@@ -35,6 +36,7 @@
     </div>
 
     <div class = "col-md-4">
+        <div align = "center"><img class="mb-3" src="{% static 'images/aiamis.svg' %}" width="125px" height="auto" alt="Logo da Aiamis"></div>
         <h3>Ecossitema de Nível 2</h3>
         <p>
           Acesso com autenticação para alunos UNINTA e comunidade de parceiros
@@ -42,6 +44,7 @@
       </div>
 
       <div class = "col-md-4">
+          <div align = "center"><img class="mb-3" src="{% static 'images/aiamis.svg' %}" width="125px" height="auto" alt="Logo da Aiamis"></div>
           <h3>Ecossistema de Nível 3</h3>
           <p>
             Nível de acesso e ferramentas exclusivas dos Alunos UNINTA e colaboradores
@@ -76,4 +79,40 @@
       {% endfor %}
     </div>
 </section>
+
+<section class = "jumbotron d-flex justify-content-center" >
+  <div class = "row">
+    <div class = "col-md-12" align = "center">
+      <h2 class = "mb-4">Comece a utilizar agora, de graça</h2>
+      <p>Os produtos do Ecossistema de Aprendizagem Aiamis são gratuitos para toda a comunidade acadêmica.
+        Estudantes da instituição possuem acesso à recursos aprimorados.</p>
+      <a class = "btn btn-indigo text-white" style = "background-color: #15c39a;">Acessar Ecosssitema Aiamis <i class = "fa fa-arrow-right""></i></a>
+    </div>
+  </div>
+</section>
+<section class = "jumbotron bg-white container" >
+    <div class = "row">
+      <div class = "col-md-2">
+          <div align = "center"><img class="mb-3" src="{% static 'images/aiamis.svg' %}" width="125px" height="auto" alt="Logo da Aiamis"></div>
+      </div>
+      <div class = "col-md-8">
+        <h2 class = "">Conheça a estrutura da Instituição</h2>
+        <p>
+            Este não é um livro de gerenciamento produzido na torre de marfim do CEO. Ele é feito por equipes, para equipes. Você vai encontrar guias passo a passo para acompanhar a saúde da sua equipe e táticas que dão aquele empurrãozinho que faltava para você fazer e acontecer.
+        </p>
+        <a class = "btn btn-indigo text-white" style = "background-color: #15c39a;">Ir para o site do UNINTA<i class = "fa fa-arrow-right""></i></a>
+      </div>
+    </div>
+
+    <!--div class = "row">
+        <div class = "col-md-6">
+            <div align = "center"><img class="mb-3" src="{% static 'images/ini.png' %}" width="" height="750" alt="Logo da Aiamis"></div>
+        </div>
+        <div class = "col-md-6 vertical-alignment align-middle">
+          <h1 class = "heading-1">Comece a utilizar agora, de graça</h1>
+          <p>Os produtos do Ecossistema de Aprendizagem Aiamis são gratuitos para estudantes da instituição.</p>
+          <a class = "btn btn-indigo text-white" style = "background-color: #15c39a;">Saiba mais <i class = "fa fa-arrow-right""></i></a>
+        </div>
+      </div-->
+  </section>
 {% endblock %}
