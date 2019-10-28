@@ -1,32 +1,14 @@
 {% extends 'html/base.html' %}
 {% load static %}
 {% block content %}
-
-<!--div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-          {% include 'html/banner.html' %}
-      </div>
-      <div class="carousel-item">
-          {% include 'html/tools.html' %}
-      </div>     
-    </div>
-  </div>
-
-  <!--{% include 'html/banner.html' %}
-  {% include 'html/tools.html' %}-->
-
-  <style>
-    hre { border: solid 2px white;}
-  .float { position: fixed; bottom: 56px; right: 16px; z-index: 999;}
-  ol li { font-size: 0.8em;}
-  </style>
+<style> hre { border: solid 2px white;} .float { position: fixed; bottom: 56px; right: 16px; z-index: 999;} ol li { font-size: 0.8em;} </style>
   {% include 'html/banner.html' %}
 
 <div class = "float">
     <a class = "btn btn-warning btn-lg text-dark mb-3" href = "{% url 'new' %}">Acessibilidade</a>
     <a class = "btn btn-warning btn-lg text-dark mb-3" href = "{% url 'new' %}"><i class = "fab fa-twitter"></i></a>
 </div>
+
 <section class = "container mb-5 p-5" align = "center">
   <div class = "row">
     <div class = "col-md-4">
