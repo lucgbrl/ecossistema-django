@@ -1,30 +1,36 @@
 {% extends 'html/base.html' %}
 {% load static %}
 {% block content %}
-    <section class = "jumbotron bg-danger text-white">
-        <div class = "container">
-            <div class = "row">
-                <div class = "col-md-6">
-                    <small class = "text-white">Centro Universitário UNINTA</small>
-                    <h1 display = "heading-1">Usuários</h1>
-                    <h2 class = "heading-1">Ecossistema de Aprendizagem Aiamis</h2>
-                    <p class = "text-white">Texto descritivo acerca do ecossistema de Aprendizagem
-                        Aiamis. Neste banner irão aparecer noticias relevantes recentes.
-                    </p>
-                    <a class = "btn btn-warning btn-lg text-dark" href = "{% url 'new' %}">Cadatrar novo usuário</a>
-                </div>
-                <div class = "col-md-6 d-flex justify-content-center mb-5">
-                    <img class="mb-3" src="{% static 'images/logo.png'%}" width="" height="300" alt="Logo da Aiamis">
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class = "container p-3 text-dark">
         <div class = "row">
-            <div class = "col-md-12">
-                <h2>Listando os Usuário no Ecossistema</h2>
-                <p>Catálogo de materiais</p>
+            <div class = "col-md-6">
+                <h1>Ecossistema UNINTA</h1>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active mb-3">
+                        <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">List group item heading</h5>
+                        <small>3 days ago</small>
+                        </div>
+                        <p class="text-white mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <small>Donec id elit non mi porta.</small>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">List group item heading</h5>
+                        <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">List group item heading</h5>
+                        <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                    </a>
+                </div>
             </div>
         </div>
     </section>

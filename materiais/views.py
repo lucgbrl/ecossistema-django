@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Post, Material
+from .models import Post, Material, Section
 from django.utils import timezone
 from django.http import HttpResponse
 from .forms import PostForm, MaterialForm
@@ -7,8 +7,9 @@ from .forms import PostForm, MaterialForm
 
 # Create your views here.
 def index(request):
+    sections = Section.objects.all()
     posts = Post.objects.filter(published_date__lte = timezone.now()).order_by('published_date')
-    return render(request, 'html/index.html', {'posts' : posts})
+    return render(request, 'html/index.html', {'posts' : posts, 'sections' : sections})
 
 def usuarios(request):
     return render(request, 'html/usuarios.html', {})
