@@ -1,41 +1,46 @@
 {% extends 'html/base.html' %}
 {% load static %}
+{% load bootstrap %}
 {% block content %}
 
+{{ filter.form|bootstrap }}
 <section class = "container-fluid mb-5 mt-5">
 <div class = "row d-flex justify-content-center">    
         <div class = "col-md-6 p-5">
                 <hr>
-                <h3 align = "center">{{ material.titulo }}</h3>
+                <h3 align = "center">Search</h3>
                 <hr>
                 <!--form>
                         <input type = "text" class = "form-control mb-3" placeholder="e.g. Bioquímica">
                 </form -->
-                <div class = "row">
-                    <div class = "col-md-3" style = "border-right: solid 1px #dedede;">
-                        <div align = "center"><img class="mb-3" src="{% static 'images/aiamis.svg' %}" width="125px" height="auto" alt="Logo da Aiamis">
-                            <h3>Catálogo Aiamis</h3>
-                            <p><i class = "fa fa-"></i> 2019 | Saiba mais</p>
+                {% for material in material_list %}
+                    <div class = "row">
+                        <div class = "col-md-3" style = "border-right: solid 1px #dedede;">
+                            <div align = "center"><img class="mb-3" src="{% static 'images/aiamis.svg' %}" width="125px" height="auto" alt="Logo da Aiamis">
+                                <h3>Catálogo Aiamis</h3>
+                                <p><i class = "fa fa-"></i> 2019 | Saiba mais</p>
+                            </div>
+                        </div>
+                        <div class = "col-md-3">
+                            <ul>
+                                <li><h5>Data de Upload</h5></li>
+                                <hr>
+                                <li><a><i class = "fa fa-calendar"></i>{{ material.created_date.date }}</a></li>
+                                <li><a><i class = "fa fa-clock"></i>{{ material.created_date.time }}</a></li>                        
+                            </ul>       
+                        </div>
+                        <div class = "col-md-6">
+                            <ul>
+                                <li><h5>Dados do material</h5></li>
+                                <hr>
+                                <li><a href = "" class = "links "><i class = "fa fa-file-alt"></i> {{ material.titulo }}</a></li>
+                                <li><a>{{ material.desc }}</a></li>
+                                <li><small class = "text-dark">http <i class = "fa fa-arrow-circle-right"></i> Traduzir este material</small></li>
+                                <li><small> {{ material.autor }} </small></li>
+                            </ul>       
                         </div>
                     </div>
-                    <div class = "col-md-3">
-                        <ul>
-                            <li><h5>Data de Upload</h5></li>
-                            <hr>
-                            <li><a><i class = "fa fa-calendar"></i> {{ material.created_date.date}}</a></li>
-                            <li><a><i class = "fa fa-clock"></i> {{ material.created_date.time}}</a></li>                        </ul>       
-                    </div>
-                    <div class = "col-md-6">
-                        <ul>
-                            <li><h5>Dados do material</h5></li>
-                            <hr>
-                            <li><a href = "{{ material.url }}" class = "links "><i class = "fa fa-file-alt"></i> {{ material.titulo }}</a></li>
-                            <li><a>{{ material.desc }}</a></li>
-                            <li><small class = "text-dark">{{ material.url }} <i class = "fa fa-arrow-circle-right"></i> Traduzir este material</small></li>
-                            <li><small> {{ material.autor}} </small></li>
-                        </ul>       
-                    </div>
-                </div>
+                {% endfor %}
         </div>
     <!--div class = "col-md-6 col-sd-12 p-5 ">
         

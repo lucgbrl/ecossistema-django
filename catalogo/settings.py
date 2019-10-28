@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'materiais',
+    'django_filters',
+    'bootstrapform',
 ]
 
 JET_CHANGE_FORM_SIBLING_LINKS = True

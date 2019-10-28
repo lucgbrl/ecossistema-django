@@ -12,31 +12,15 @@
 .main{background-color: rgb(184, 27, 27);}
 code{padding: 5px; background-color: rgba(247, 206, 206, 0.571); border-radius: 3px; padding-left: 10px; padding-right: 10px;}
 * { font-family: 'Lato', sans-serif;}
-
 .jumbotron, footer { background-image: url('{% static "/images/hh.jpg" %}') !important;background-size: 50% 50%;}
-
-#headline {
-    background-image: url("../img/intro-bg.png") !important;
-    background-size: 110%;
-    background-position: -100px;
-    height: 880px;
-} 
+#headline {background-image: url("../img/intro-bg.png") !important; background-size: 110%; background-position: -100px; height: 880px;} 
 
 #topo{
-    position: fixed;
-    background: #dc3545;
-    width: 100%;
-}
+    position: fixed;background: #dc3545;width: 100%;}
 
-#conttopo{
-    margin-left: 64%;
-    font-size: 20px;
-    font-family: "Ubuntu",sans-serif;
-}
+#conttopo{margin-left: 64%;font-size: 20px;font-family: "Ubuntu",sans-serif;}
 
-#nada{
-    display: none;
-}
+#nada{display: none;}
 
 
 #float {
@@ -60,9 +44,9 @@ code{padding: 5px; background-color: rgba(247, 206, 206, 0.571); border-radius: 
 .btn-rounded {
     margin-left: 10px ;
 }
-p { 
-    color: gray;
-}
+/*footer > p { 
+    color: gray !important;
+}*/
 #headline {
     background-image: url('img/intro-bg.png') !important;
     background-size: 110%;
@@ -106,11 +90,10 @@ nav {
     position: fixed;
     z-index: 999;
 }
-
 .btn { border-radius: 10px; }
-	footer{ background: #081238 !important; }
-	ul li { list-style: none; margin-top: 10px; margin-bottom: 15px; }
-	footer a { color: yellow !important; }
+footer{ background: #081238 !important; }
+ul li { list-style: none; margin-top: 10px; margin-bottom: 15px; }
+footer a { color: yellow !important; }
 
 #float {
     position: fixed;

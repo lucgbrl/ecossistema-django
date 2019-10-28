@@ -3,9 +3,12 @@ from .models import Post, Material, Section
 from django.utils import timezone
 from django.http import HttpResponse
 from .forms import PostForm, MaterialForm
+from .filters import SnippetFilter
+
+from django.views.generic import ListView
 
 
-# Create your views here.
+   
 def index(request):
     sections = Section.objects.all()
     posts = Post.objects.filter(published_date__lte = timezone.now()).order_by('published_date')
@@ -20,8 +23,9 @@ def lista(request):
     return render(request, 'html/lista.html' , {'materiais' : materiais, 'materiais_count' : materiais_count})
 
 def detalhes(request, pk):
-    materiais = get_object_or_404(Material, pk=pk)
-    return render(request, 'html/detalhes.html', {'materiais' : materiais})
+    materiais_count = Material.objects.count()
+    material = get_object_or_404(Material, pk=pk)
+    return render(request, 'html/detalhes.html', {'material' : material})
 
 def new(request):
     if request.method == "POST":

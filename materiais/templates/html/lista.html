@@ -1,24 +1,61 @@
 {% extends 'html/base.html' %}
+{% load static %}
 {% block content %}
-  <section class = "container-fluid">
-      <div class = "row d-flex">
-           <div class = "col-md-2 bg-muted  p-5">
-               <h3>Informações da lista</h3>
-               <hr />
-               <a class = "btn btn-warning mb-3 "><i class = "fa fa-user-circle "></i> Última atualização</a>
-               <a class = "btn btn-warning mb-3 "><i class = "fa fa-sync-alt "></i> Atualizar lista</a>
-               <a class = "btn btn-warning mb-3 "><i class = "fa fa-cogs "></i> Configurar visualização</a>
-           </div>
-            <div class = "col-md-6 p-5">
-                <h3 class = "">Materiais disponíveis Online</h3>
+<style>
+.links { font-size: 1.2em; color: navy;}
+.nota { background-color: rgb(209, 252, 252); padding: 5px; border-radius: 5px;;}
+.refs { color: rgb(58, 133, 136);}
+.context { font-size: 0.5em;}
+input[type=text] { border-radius: 30px !important;}
+table { font-size: 0.8em;}
+</style>
+  <section class = "container">
+      <div class = "row d-flex  justify-content-center">          
+            <div class = "col-md-12 mt-5">
+                <div align = "center">
+                    <hr>
+                    <h2>Materiais didáticos online</h2>
+                    <hr>
+                    <p>Listando aproximadamente {{ materiais_count}} materiais marcados como disponíveis </p>
+                    <form>
+                        <input type = "text" class = "form-control mb-3" placeholder="e.g. Bioquímica" name = "search">
+                    </form>
+                </div>
+            </div>
+      </div>
+  </section>
+  <section class = "container mt-2 p-3">
+    <table class="table table-borderless shadow- ">                
+        <caption>Materiais Didáticos disponíveis</caption>
+        <thead class = "bg-danger text-white">
+            <tr>
+                <th scope="col">Titulo</th>
+                <th scope="col">Páginas</th>
+                <th scope="col">Autoria</th>
+                <th scope="col">Referência</th>
+                <th scope="col">Publicação</th>
+            </tr>
+        </thead>
+            <tbody>
+                {% for material in materiais %}
+                <tr class = "active-row">
+                    <td><a href = "{% url 'detalhes' pk=material.pk %}"><i class = "fa fa-file"></i> {{ material.titulo}}</a></td>
+                    <td>{{ material.paginas}}</td>
+                    <td>{{ material.autor }}</td>
+                    <td>{{ material.desc }}</td>
+                    <td><i class = "fa fa-calendar"></i>  {{ material.published_date.date }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+    </table>
+  </section>
+            
+                <!--h3 class = "">Materiais disponíveis Online</h3>
                 <p>Listando todos os <code> {{ materiais_count }} materiais</code> disponíveis abaixo</p>
                 
-                <table class="content-table shadow-sm">                
+                <table class="table shadow-sm mt-5">                
                 <caption>Materiais Didáticos disponíveis</caption>
-                <form>
-                    <input class = "form-control" placeholder = "e.g. Biofísica"/>
-                </form>
-                <thead class = "bg-danger">
+                <thead class = "bg-danger text-white">
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Titulo</th>
@@ -43,7 +80,7 @@
                         </tr>
                     {% endfor %}
                     </tbody>
-                </table>
+                </table-->
             </div>
         </div>
       </div>
