@@ -55,9 +55,9 @@
         {% for post in posts %}
           {% if post.section.title == section.title %}
           <div class = "col-md-4 mb-3">
-            <div class = "card">
+            <div class = "card bg-white">
               <div class = "card-header text-muted">
-                <small>{{ post.created_date }}</small>
+                <small><i class = "fa fa-history"></i> {{ post.created_date.date }}</small>
               </div>
               <div class = "card-body ">
                 <div align = "center"><img class="mb-3" src="{% static 'images/aiamis.svg' %}" width="125px" height="auto" alt="Logo da Aiamis"></div>

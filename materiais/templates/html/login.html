@@ -1,0 +1,132 @@
+{% extends 'html/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class = "container-fluid mb-5 mt-5">
+<div class = "row d-flex justify-content-center">    
+        <div class = "col-md-6 p-5">
+                <hr>
+                <h3 align = "center">{{ material.titulo }}</h3>
+                <hr>
+                <!--form>
+                        <input type = "text" class = "form-control mb-3" placeholder="e.g. Bioquímica">
+                </form -->
+                <div class = "row">
+                    <div class = "col-md-3" style = "border-right: solid 1px #dedede;">
+                        <div align = "center"><img class="mb-3" src="{% static 'images/aiamis.svg' %}" width="125px" height="auto" alt="Logo da Aiamis">
+                            <h3>Catálogo Aiamis</h3>
+                            <p><i class = "fa fa-"></i> 2019 | Saiba mais</p>
+                        </div>
+                    </div>
+                    <div class = "col-md-3">
+                        <ul>
+                            <li><h5>Data de Upload</h5></li>
+                            <hr>
+                            <li><a><i class = "fa fa-calendar"></i> {{ material.created_date.date}}</a></li>
+                            <li><a><i class = "fa fa-clock"></i> {{ material.created_date.time}}</a></li>                        </ul>       
+                    </div>
+                    <div class = "col-md-6">
+                        <ul>
+                            <li><h5>Dados do material</h5></li>
+                            <hr>
+                            <li><a href = "{{ material.url }}" class = "links "><i class = "fa fa-file-alt"></i> {{ material.titulo }}</a></li>
+                            <li><a>{{ material.desc }}</a></li>
+                            <li><small class = "text-dark">{{ material.url }} <i class = "fa fa-arrow-circle-right"></i> Traduzir este material</small></li>
+                            <li><small> {{ material.autor}} </small></li>
+                        </ul>       
+                    </div>
+                </div>
+        </div>
+    <!--div class = "col-md-6 col-sd-12 p-5 ">
+        
+        <h5>Materiais disponíveis Online</h5> 
+            {% if material.created_date %}
+                <h5><a href = " {% url 'detalhes' pk=material.pk %} " class = "links "><i class = "fa fa-file-alt"></i> {{ material.titulo }}</a><br></h5>
+                <small><span class = "">{{ material.created_date}}</span></small><br>
+                <span class = "text-dark">{{ material.url }} <i class = "fa fa-arrow-circle-right"></i> Traduzir este material</span>
+                <P class = "">{{ material.desc }}</p>
+                <small> {{ material.autor|linebreaks }} </small>
+            {% endif %}
+            
+            <div aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Mais</a></li>
+                </ul>
+            </div>
+    </div-->
+</div>
+</section>
+<!--
+<section class = "container mb-5">
+    <div class = "row">
+        <div class = "col-md-8 p-5 mb-5">
+            <div class = "card">
+                <div class = "card-header">
+                    {{ materiais.titulo }}
+                </div>
+                <div class = "card-body">
+                    <h1>{{ materiais.titulo|linebreaks }}</h1>
+                    
+                        <small>Conteúdo sujeito às leis de propriedade intelectual</small><br><br>
+                        <a class="navbar-brand" href="#"><img class="mb-3" src="{% static 'images/aiamis.svg'%}" width="100px" height="auto" alt="Logo da Aiamis"></a>
+
+                    <a class = "btn btn-danger text-white mb-3"><i class = "fab  fa-youtube"></i> Acessar conteúdo</a>
+                    <a class = "btn btn-primary text-white mb-3"><i class = "fab  fa-facebook"></i></a>
+                    <a class = "btn  text-white mb-3" style = "background-color: #1DA1F2"><i class = "fab  fa-twitter" ></i></a>
+                    
+                    <p><i class = "fa fa-thumbtack"></i> 
+                        <b>Descrição/Referências do material: </b> {{ materiais.desc }}
+                        Esses são sinos de casamento que se ouvem? Serão passos pequeninos de pequenos pezinhos no chão do escritório? Terá Michael se transformado num chefe da máfia? Com a Dunder Mifflin à beira da falência, quem sabe se ele terá - ou talvez já esteja na altura de substituir a liderança da Dunder Mifflin.
+                    </p>              
+                    <p class = "text-muted"><i class = "fa fa-user-circle"></i> <b>Nome completo do autor:</b> <a href = "#">{{ materiais.autor}} </a></p>
+                    
+                    <p><i class = "fa fa-text-height"></i> <b>Tipo:</b> Videoaula</p>
+                    <p><i class = "fa fa-closed-captioning"></i> <b>Legendas:</b> Não</p>
+                    <p><i class = "fa fa-language"></i> <b>Idiomas do documento:</b> 	العربية, Dansk, English [CC], Suomi, Indonesia, Italiano, 한국어, Norsk Bokmål, Nederlands, Polski, Português, Русский, Svenska, ไทย, Türkçe, 中文（简体）, 中文（繁體）</p>    
+                    <p class="footer"><i class = "fa fa-calendar-check"></i>  <strong>Material publicado em:</strong> {{ materiais.published_date}} </p>
+                </div>
+                <div class = "card-footer">
+                    <a class = "btn btn-outline-danger" href = ""><i class = "fa fa-search"></i> Buscar termos</a>
+                    <a class = "btn btn-primary" href = ""><i class = "fa fa-plus-circle"></i> Sugerir adição ao acervo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+ <!--table class="content-table shadow-sm">                
+            <caption>Informações do Material Selecionado</caption>
+                <thead class = "bg-danger">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Páginas</th>
+                        <th scope="col">Videos</th>
+                        <th scope="col">Autoria</th>
+                        <th scope="col">Referência</th>
+                        <th scope="col">url</th>
+                        <th scope = "col">Publicação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if materiais.created_date %}
+                    <tr class = "active-row">
+                        <th scope="row">{{ materiais.id }}</th>
+                        <td><a href = "">{{ materiais.titulo}}</a></td>
+                        <td>{{ materiais.paginas}}</td>
+                        <td>{{ materiais.videos}}</td>
+                        <td>{{ materiais.autor }}</td>
+                        <td>{{ materiais.desc }}</td>
+                        <td>{{ materiais.url }}</td>
+                        <td>{{ materiais.published_date }}</td>
+                    </tr>
+                {% endif %}
+                </tbody>
+            </table-->
+
+        
+{% endblock %}

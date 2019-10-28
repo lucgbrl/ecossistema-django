@@ -1,0 +1,38 @@
+{% extends 'html/base.html' %}
+{% load bootstrap %}
+{% load static %}
+{% block content %}
+
+<section class="container mb-5 mt-5"> 
+    <div class = "row">
+        <!--div class = "col-md-4 col-sd-12" align = "center">
+            <div align = "center"><img src = "{% static 'images/aiamis.svg' %}" width="300"></div>
+            <h2>Ainda não possui conta no Ecossistema Aiamis?</h2>
+            <p>Clique <a href = "" class = "text-danger">aqui</a> e cadastre-se para acessar o catálogo de materiais didáticos e opções personalizadas
+
+            </p>        
+        </div-->
+      <div class = "col-md-6 col-sd-12">
+        <div class = "card bg-white">
+            <div class = "card-header">
+                <i class = "fa fa-user-circle"></i> Login no Ecossistema
+            </div>
+            <div class = "card-body">
+                <div align = "center"><img src = "{% static 'images/aiamis.svg' %}" width="150"></div>
+                <form method = "post">
+                        {% csrf_token %}
+                        <input type = "hidden" name = "next" value = "{{ next }}" />                    
+                        {{ form|bootstrap }}
+                        <hr>
+                    <small>A navegação está sujeita aos termos do Centro Universitário Aiamis, podendo ser revogado sem avisos</small>
+                </div>
+                <div class = "card-footer">
+                        <button type = "submit" class = "btn btn-warning btn-block mb-3">Entrar</button>
+                    </form>
+                </div>
+        </div>
+      </div>
+</section>
+</div>
+
+{% endblock %}

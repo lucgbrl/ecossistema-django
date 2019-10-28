@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from .forms import PostForm, MaterialForm
 from .filters import SnippetFilter
 
+from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView
 
 
@@ -27,6 +28,7 @@ def detalhes(request, pk):
     material = get_object_or_404(Material, pk=pk)
     return render(request, 'html/detalhes.html', {'material' : material})
 
+@login_required
 def new(request):
     if request.method == "POST":
         form = MaterialForm(request.POST)

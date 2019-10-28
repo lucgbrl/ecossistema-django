@@ -1,5 +1,7 @@
 {% extends 'html/base.html' %}
 {% block content %}
+
+
 <section class = "container">
         <div class="row p-5 mt-5 mb-5">			
             <div class = "col-md-6 mt-5 ">
@@ -31,7 +33,6 @@
                                         <form method="POST">
                                             {% csrf_token %}
                                             {{form.as_p }}
-                                        
                                             <button type = "submit" class = "btn btn-primary btn-block text-white">Cadastrar um novo material</button>
                                         </form>
                                     </div>
@@ -44,6 +45,7 @@
         </div>
     </section>
 {% endblock%}
+
 
 <!-- 
 
